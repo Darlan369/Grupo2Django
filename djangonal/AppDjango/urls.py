@@ -1,7 +1,7 @@
-from django.urls import path,include
+from django.urls import path
 from AppDjango import views as app_views
 
 urlpatterns = [
-    path("", app_views.AppDjango, name='AppDjango'),
-    path(r"AppDjango/", include("AppDjango.urls"))
+    path("", app_views.index, name ="index"),
+    path("index/", app_views.index, name ="index"),
 ]
