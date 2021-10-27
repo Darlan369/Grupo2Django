@@ -1,5 +1,4 @@
 """djangonal URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -14,13 +13,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import include
-
-from luca import views as luca_views
+from django.urls import path, include
 
 urlpatterns = [
-    path("", luca_views.luca, name="luca"),
     path(r"luca/", include("luca.urls")),
     path('admin/', admin.site.urls),
+    path(r'app_fgv/', include('app_fgv.urls')),
+    path(r"Aquarela/", include("Aquarela.urls")),
+    path(r'mapp/', include('mapp.urls')),
+    path(r'AppDjango/', include('AppDjango.urls')),
 ]
