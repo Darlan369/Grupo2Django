@@ -19,4 +19,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(r"Aquarela/", include("Aquarela.urls")),
     path(r'mapp/', include('mapp.urls')),
+    path(r'AppDjango/', include('AppDjango.urls')),
 ]
