@@ -14,11 +14,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Aquarela import views as Aquarela_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", Aquarela_views.index, name ="Aquarela"),
-    #path("index/", Aquarela_views.index, name ="index"),
     path(r"Aquarela/", include("Aquarela.urls")),
+    path(r'mapp/', include('mapp.urls')),
 ]
