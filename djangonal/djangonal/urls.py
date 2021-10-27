@@ -17,6 +17,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'app_fgv/', include('app_fgv.urls')),
     path(r"Aquarela/", include("Aquarela.urls")),
     path(r'mapp/', include('mapp.urls')),
     path(r'AppDjango/', include('AppDjango.urls')),
