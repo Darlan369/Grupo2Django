@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", Aquarela_views.index, name ="Aquarela"),
     #path("index/", Aquarela_views.index, name ="index"),
-    path(r"Aquarela/", include("Aquarela.urls"))
+    path(r"Aquarela/", include("Aquarela.urls")),
 ]
