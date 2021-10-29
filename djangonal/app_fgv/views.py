@@ -2,9 +2,13 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse('<h2>Funcionou</h2>')
+    return render(request,'app_fgv/app_fgv.html')
 
+def precos(request):
+    return render(request, 'app_fgv/preços.html')
 
-def mypage(request):
-    return render(request, 'app_fgv.html')
-# Create your views here.
+def quantidades(request):
+    return render(request, 'app_fgv/quantidades.html')
+
+def produtos(request):
+    return render(request, 'app_fgv/produtos.html')

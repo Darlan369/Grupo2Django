@@ -3,5 +3,7 @@ from app_fgv import views
 
 urlpatterns =[
     path('', views.index, name='index'),
-    path('mypage/', views.mypage, name = 'mypage')
+    path('preços/', views.precos, name = 'preços'),
+    path('quantidades/', views.quantidades, name = 'quantidades'),
+    path('produtos/', views.produtos, name = 'produtos')
 ]
