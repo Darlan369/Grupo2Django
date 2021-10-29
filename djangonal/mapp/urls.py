@@ -3,5 +3,7 @@ from mapp import views
 
 urlpatterns = [
     path('', views.index, name = 'index'),
-    path('special/', views.special, name = 'special')
+    path('nada/', views.nada, name = 'nada'),
+    path('quadro/', views.quadro, name = 'quadro'),
+    path('sono/', views.sono, name = 'sono')
 ]

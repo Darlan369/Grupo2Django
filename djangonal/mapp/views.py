@@ -1,8 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def index(request):
-    return HttpResponse('<h2>Funcionou</h2>')
+def nada(request):
+    return HttpResponse('<h2>Não tem nada aqui</h2>')
 
-def special(request):
-    return render(request, 'mapp.html')
+def index(request):
+    return render(request, 'mapp/index.html')
+
+def quadro(request):
+    return render(request, 'mapp/quadro.html')
+
+def sono(request):
+    return render(request, 'mapp/sono.html')
