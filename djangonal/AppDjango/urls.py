@@ -3,5 +3,5 @@ from AppDjango import views as app_views
 
 urlpatterns = [
     path("", app_views.index, name ="index"),
-    path("index/", app_views.index, name ="index"),
+    path("special/", app_views.special, name ="special"),
 ]
