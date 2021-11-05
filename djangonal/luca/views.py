@@ -12,10 +12,17 @@ def luca(request):
 
 def special(request, param):
     if param%2 == 0:
-        return HttpResponse("Deu par!")
+        paridade = "par"
 
     else:
-        return HttpResponse("Deu ímpar!")
+        paridade = "ímpar"
+
+    context = {
+        "param": param,
+        "paridade": paridade
+    }
+
+    return render(request, "luca/paridade.html", context)
 
 def redir(request):
     direcionamento = reverse("luca")
