@@ -16,5 +16,8 @@ Including another URLconf
 from django.urls import path
 from Batata import views
 urlpatterns = [
-    path('', views.index, name='index')
+    path('gato1/', views.gato1, name='gato1'),
+    path('gato2/', views.gato2, name='gato2'),
+    path('index/', views.index, name='index')
+
 ]
