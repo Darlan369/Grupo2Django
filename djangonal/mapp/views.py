@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.http.response import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+import random
 
 def nada(request):
     return HttpResponse('<h2>Não tem nada aqui</h2>')
@@ -9,8 +10,12 @@ def nada(request):
 def index(request):
     return render(request, 'mapp/index.html')
 
-def quadro(request):
-    return render(request, 'mapp/quadro.html')
+def quadro(request, param1 = 'Marcelo'):
+    context = {
+        'nome': param1,
+        'number': random.randint(0,100)
+    }
+    return render(request, 'mapp/quadro.html', context)
 
 def sono(request):
     return render(request, 'mapp/sono.html')
