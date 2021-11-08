@@ -2,7 +2,8 @@ from django.http import HttpResponse
 from django.http.response import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-import random
+from datetime import date
+from random import randint
 
 def nada(request):
     return HttpResponse('<h2>Não tem nada aqui</h2>')
@@ -13,10 +14,10 @@ def index(request):
 def quadro(request, nome = 'marcelo'):
     context = {
         'name': nome,
-        'number': random.randint(0,100),
-        'filters': ['lower',False,'urlize'],
+        'number': randint(0,101),
+        'filters': ['timeuntil', False, 'urlize'],
         'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        'whatever': 'Qualquer Coisa'
+        'date': date.fromisoformat('2022-02-04')
     }
     return render(request, 'mapp/quadro.html', context)
 

@@ -23,6 +23,10 @@
         li {
             font-size: 2vw;
         }
+
+        footer {
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -36,7 +40,7 @@
                 Nada
             </li>
             <li>
-                Mostrar o nome {{name|title}} e um número aleatório: {{number|center:'10'}}
+                Mostrar o nome {{ name|title }} e um número aleatório: {{ number }}
             </li>
         </ul>
         {% if number > 50 %}
@@ -48,13 +52,14 @@
         <ul>
             {% for filter in filters %}
             <li>
-                {{filter|default:'default'}}
+                {{ filter|default:'default' }}
             </li>
             {% endfor %}
         </ul>
-        Recomendação: {{url|urlize}} <br>
-        {{whatever|lower}}
+        Recomendação: {{ url|urlize }} <br>
+        Tempo até meu aniversário: {{ date|timeuntil }}
     </div>
+    {% include 'mapp/footer.html' %}
 </body>
 
 </html>
