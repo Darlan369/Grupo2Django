@@ -11,7 +11,8 @@ def index(request):
     return render(request, "Aquarela/Aquarela.html")
 
 def especial(request, param):
-    contexto = {"parametro": param}
+    cores = ["vERMElho", "veRde", "AZul", "amARelo", "maRROm"]
+    contexto = {"parametro": param, "cores":cores}
     if param % 2 == 0:
         return render(request, "Aquarela/Aquarela_0.html", contexto)
     elif param % 2 == 1:
