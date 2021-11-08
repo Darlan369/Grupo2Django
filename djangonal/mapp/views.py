@@ -10,10 +10,13 @@ def nada(request):
 def index(request):
     return render(request, 'mapp/index.html')
 
-def quadro(request, param1 = 'Marcelo'):
+def quadro(request, nome = 'marcelo'):
     context = {
-        'nome': param1,
-        'number': random.randint(0,100)
+        'name': nome,
+        'number': random.randint(0,100),
+        'filters': ['lower',False,'urlize'],
+        'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        'whatever': 'Qualquer Coisa'
     }
     return render(request, 'mapp/quadro.html', context)
 

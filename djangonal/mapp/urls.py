@@ -7,6 +7,6 @@ urlpatterns = [
     path('especial/<int:param>', views.especial_int, name = 'especial_int'),
     path('especial/<str:param>', views.especial_str, name = 'especial_str'),
     path('nada/', views.nada, name = 'nada'),
-    path('quadro/<str:param1>', views.quadro, name = 'quadro'),
+    path('quadro/<str:nome>', views.quadro, name = 'quadro'),
     path('sono/', views.sono, name = 'sono'),
 ]

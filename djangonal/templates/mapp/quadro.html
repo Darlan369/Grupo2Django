@@ -36,9 +36,24 @@
                 Nada
             </li>
             <li>
-                Mostrar o nome {{nome}} e um número aleatório: {{number}}
+                Mostrar o nome {{name|title}} e um número aleatório: {{number|center:'10'}}
             </li>
         </ul>
+        {% if number > 50 %}
+        O número é maior que 50.
+        {% else %}
+        O número é menor ou igual a 50.
+        {% endif %}
+        <p>Filtros usados:</p>
+        <ul>
+            {% for filter in filters %}
+            <li>
+                {{filter|default:'default'}}
+            </li>
+            {% endfor %}
+        </ul>
+        Recomendação: {{url|urlize}} <br>
+        {{whatever|lower}}
     </div>
 </body>
 
