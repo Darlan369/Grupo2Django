@@ -5,39 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantidades</title>
-    <style>
-        div {
-            height: 80vh;
-            width: 70vw;
-            border: 5px solid black;
-            border-radius: 10px;
-            margin: 15vh 0 0 15vw;
-        }
-        
-        p {
-            font-size: 5vw;
-            text-align: center;
-            color: blueviolet;
-        }
-
-        li {
-            font-size: 3vw;
-        }
-
-    </style>
+   
 </head>
 <body>
-    <div>
-        <p> Quantidades de cada produtos:</p>
-        <ul>
-            <li>
-                Bolacha : 10
-            </li>
-            <li>
-                Chocolate : 23
-            </li>
-        </ul>
-    </div>
+
+    Quantidades disponiveis de {{param2}} é {{quantidade}} und.
+    <br>
+
+    {% if quantidade < 10 %}
+        <p>{{param2}} está case acabando, aproveite enquanto é tempo!</p>
+    {% endif %}
+
+    
 </body>
 
+{% include 'app_fgv/footer.html' %}
 </html>

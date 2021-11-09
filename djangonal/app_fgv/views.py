@@ -1,14 +1,52 @@
-from django.http.response import HttpResponse
+from django.http import HttpResponse
+from django.http.response import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
+from datetime import date
 
-def index(request):
+def app_fgv(request):
     return render(request,'app_fgv/app_fgv.html')
 
-def precos(request):
-    return render(request, 'app_fgv/preços.html')
-
-def quantidades(request):
-    return render(request, 'app_fgv/quantidades.html')
 
 def produtos(request):
-    return render(request, 'app_fgv/produtos.html')
+    lista_de_produtos = ["chocolate", "balinha", "maçã"]
+
+    context = {
+        "produtos":lista_de_produtos,
+        'data': date.fromisoformat('2021-12-25')
+    }
+
+    return render(request, 'app_fgv/produtos.html',context)
+
+
+
+def preços(request, param1):
+    lista_de_produtos = ["chocolate", "balinha", "maçã"]
+    lista_preco =[10, 2, 7]
+    
+    idx = param1 -1
+
+    context = {
+        "param1":lista_de_produtos[idx],
+        "preço": lista_preco[idx]
+    }
+
+    return render(request, "app_fgv/preços.html", context)
+
+def quantidades(request, param2):
+    lista_de_produtos = ["chocolate", "balinha", "maçã"]
+    lista_quantidades = [1, 1000, 70]
+
+    idx = param2 -1
+
+    context = {
+        "param2": lista_de_produtos[idx],
+        "quantidade": lista_quantidades[idx]
+
+    }
+
+    return render(request, "app_fgv/quantidades.html", context)
+
+def redireciona(request):
+    url_redirecionamento = reverse("app_fgv")
+    return HttpResponseRedirect(url_redirecionamento)

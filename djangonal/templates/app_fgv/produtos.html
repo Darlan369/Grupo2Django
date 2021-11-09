@@ -5,39 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-    <style>
-        div {
-            height: 80vh;
-            width: 70vw;
-            border: 5px solid black;
-            border-radius: 10px;
-            margin: 15vh 0 0 15vw;
-        }
-        
-        p {
-            font-size: 5vw;
-            text-align: center;
-            color: blueviolet;
-        }
-
-        li {
-            font-size: 3vw;
-        }
-
-    </style>
+    
 </head>
 <body>
     <div>
-        <p> Produtos disponiveis:</p>
-        <ul>
-            <li>
-                Bolacha 
-            </li>
-            <li>
-                Chocolate
-            </li>
-        </ul>
-    </div>
-</body>
+        <h1>Produtos</h1>
+        <ol>
 
+           {% for produto in produtos %}
+                <li> {{produto|title}}</li>
+           {% endfor %}
+
+        </ol>
+    </div>
+
+    <br>
+
+    <h2> Fique ligado na próxima promoção!!!!!</h2>
+
+    {{ data| date:"D d M Y" }}
+
+    <p>O produto mais esperado até agr é {{produtos|random | upper}}</p>
+
+    {% include 'app_fgv/footer.html' %}
+</body>
 </html>
