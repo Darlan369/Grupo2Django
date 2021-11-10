@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset="UTF-8"/>
-		<title>Aquarela</title>
-	</head>
-	<body>
-		<header>
-			<h1>Aquarela par 🎨</h1>
-		</header>
-		
-		<article>
+{% extends "Aquarela/Aquarela_template.html" %}
+{% load static %}
+
+{% block titulo %}
+	<title>Aquarela 1</title>
+{% endblock %}
+
+{% block estilo %}
+	<link rel="stylesheet" type="text/css" href="{% static 'Aquarela/estilos.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+	<header>
+		<h1>Aquarela par 🎨</h1>
+	</header>
+
+	<article>
 			<h2>Você escolheu o parâmetro {{parametro}}</h2>
-			<h3>{{dia|date:"d-m-y"}}</h3>
 			<!--Lorem Ipsum--->
 			<p></p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sapien sem, auctor quis dolor ut, ultricies faucibus justo. Etiam finibus, tortor quis molestie malesuada, augue dui ultrices justo, vel suscipit eros risus id ligula. Praesent eget fermentum elit, non varius libero. Aenean pulvinar, neque ac sodales imperdiet, nisi nisl luctus diam, sit amet tempus libero massa vel orci. Morbi tincidunt, ligula vitae varius ultrices, orci turpis pharetra leo, in congue felis augue pulvinar lorem. Sed sit amet purus diam. Curabitur ut posuere magna. Suspendisse mollis euismod lacinia. In porta, nunc id egestas lobortis, mi neque ultricies purus, id tristique sem lorem in dolor. Phasellus felis mauris, pretium at nisl sed, euismod pharetra mauris.</p>
@@ -39,12 +43,5 @@
 			<p>{{cores|first|title|add:", "}}{{cores|last|lower}}</p>
 			<h3>Uma cor aleatória (EM CAIXA ALTA):</h3>
 			<p>{{cores|random|upper}}</p>
-		</article>
-		<br>
-		<aside>
-			<a href="#">Voltar ao topo</a>
-		</aside>
-		<br>
-	</body>
-	
-</html>
+	</article>
+{% endblock %}
