@@ -4,7 +4,7 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'AppDjango/appdjango.html')
 
-def quadradado(request):
+def quadrado(request):
     return render(request, 'AppDjango/quadrado.html')
 
 def circulo(request):
