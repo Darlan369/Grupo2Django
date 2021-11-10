@@ -1,27 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'mapp/mapp-template.html' %}
+{% load static %}
+
+{% block header %}
     <title>Mapp</title>
-    <style>
-        h2 {
-            font-size: 30px;
-            color: #152238;
-        }
-    </style>
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static "mapp/style.css" %}'>
+{% endblock %}
+
+{% block content %}
     <h2><a onclick="JavaScript:Alert()">Mapp</a></h2>
     <p>Marcelo-app, qualquer semelhança com MAp é pura coincidência.</p>
-    
-    {% include 'mapp/footer.html' %}
-</body>
+{% endblock %}
 
+{% block js %}
 <script>
     function Alert() {
         alert('Quanta curiosidade!')
     }
 </script>
-</html>
+{% endblock %}
