@@ -2,7 +2,13 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("<strong>App Django</strong>")
+    return render(request, 'AppDjango/appdjango.html')
 
-def special(request):
-    return render(request, 'appdjango.html')
+def quadrdado(request):
+    return render(request, 'AppDjango/quadrado.html')
+
+def circulo(request):
+    return render(request, 'AppDjango/circulo.html')
+
+def triangulo(request):
+    return render(request, 'AppDjango/triangulo.html')

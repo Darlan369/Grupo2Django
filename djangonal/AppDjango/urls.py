@@ -1,7 +1,9 @@
 from django.urls import path
-from AppDjango import views as app_views
+from AppDjango import views
 
 urlpatterns = [
-    path("", app_views.index, name ="index"),
-    path("special/", app_views.special, name ="special"),
+    path("", views.index, name ="index"),
+    path("quadrado/", views.quadrado, name ="quadrdado"),
+    path("circulo/", views.circulo, name ="circulo"),
+    path("triangulo/", views.triangulo, name ="triangulo"),
 ]
