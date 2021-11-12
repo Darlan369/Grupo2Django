@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-from django.http.response import HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from datetime import date
@@ -33,6 +32,7 @@ def especial_int(request, param):
         return HttpResponse('<h2>Parâmetro de valor ímpar</h2>')
     else:
         return HttpResponseNotFound('Página não existe.')
+        
 
 def especial_str(request, param):
     if param == 'vazio':
@@ -40,7 +40,7 @@ def especial_str(request, param):
     elif param == 'dor':
         return HttpResponse('<h2>Você estuda álgebra linear</h2>')
     else:
-        return HttpResponseNotFound('Página não existe.')
+        raise Http404()
 
 def redireciona(request):
     # return HttpResponseRedirect('mapp/especial/vazio')

@@ -37,6 +37,7 @@
             {% endfor %}
         </ul>
         Recomendação: {{ url|urlize }} <br>
-        Tempo até meu aniversário: {{ date|timeuntil }}
+        Tempo até meu aniversário: {{ date|timeuntil }} <br>
+        <a href = '{% url "index" %}'> Index </a>
     </div>
 {% endblock %}
