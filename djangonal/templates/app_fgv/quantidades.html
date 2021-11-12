@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantidades</title>
-   
-</head>
-<body>
+{% extends 'app_fgv/quantidades-template.html' %}
+{% load static %}
 
+{% block header %}
+    <title>Quantidades</title>
+{% endblock %}
+
+{% block styles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static "app_fgv/style.css" %}'>
+{% endblock %}
+
+{% block content %}
+    <h1>Quantidades</h1>
     Quantidades disponiveis de {{param2}} é {{quantidade}} und.
     <br>
 
     {% if quantidade < 10 %}
-        <p>{{param2}} está case acabando, aproveite enquanto é tempo!</p>
+        <p>{{param2|title}} está quase acabando, aproveite enquanto é tempo!</p>
     {% endif %}
+{% endblock %}
 
-    
-</body>
-
-{% include 'app_fgv/footer.html' %}
-</html>

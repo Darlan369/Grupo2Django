@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> APP JANAINA</title>
-    </head>
-</html>
-<body>
+{% extends 'app_fgv/app_fgv-template.html' %}
+{% load static %}
+
+{% block header %}
+    <title>App fgv</title>
+{% endblock %}
+
+
+{% block styles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static "app_fgv/style.css" %}'>
+{% endblock %}
+
+
+{% block content %}
     <h1> Janaina </h1>
     <p> A Janaina é incrivel!</p>
+{% endblock %}
 
-    
-</body>
-
-
-{% include 'app_fgv/footer.html' %}
