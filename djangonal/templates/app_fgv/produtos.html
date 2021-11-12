@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'app_fgv/produtos-template.html' %}
+{% load static %}
+
+{% block header %}
     <title>Produtos</title>
-    
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static "app_fgv/style.css" %}'>
+{% endblock %}
+
+{% block content %}
     <div>
         <h1>Produtos</h1>
         <ol>
 
-           {% for produto in produtos %}
+        {% for produto in produtos %}
                 <li> {{produto|title}}</li>
-           {% endfor %}
+        {% endfor %}
 
         </ol>
     </div>
@@ -26,7 +28,5 @@
     {{ data| date:"D d M Y" }}
 
     <p>O produto mais esperado até agr é {{produtos|random | upper}}</p>
+{% endblock %}
 
-    {% include 'app_fgv/footer.html' %}
-</body>
-</html>

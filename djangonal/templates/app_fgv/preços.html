@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preços</title>
-    
-</head>
-<body>
-    Preço d@  {{param1}} é {{preço}} reais.
+{% extends 'app_fgv/preços-template.html' %}
+{% load static %}
 
-</body>
-{% include 'app_fgv/footer.html' %}
-</html>
+{% block header %}
+    <title>Preços</title>
+{% endblock %}
+
+
+{% block styles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static "app_fgv/style.css" %}'>
+{% endblock %}
+
+
+{% block content %}
+    <h1> Preços </h1>
+    Preço d@  {{param1}} é {{preço}} reais.
+{% endblock %}
+
+
