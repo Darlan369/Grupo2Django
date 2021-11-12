@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>App Django - Cores</title>
+</head>
+<body>
+    <h1>Cores</h1>
+    <p>Há {{cores|wordcount}} cores.</p>
+    <p>{{amigo.0|title}} escolheu a cor {{cor1|upper}}.</p>
+    <p>{{amigo.1|title}} escolheu a cor {{cor2|upper}}.</p>
+
+    {% if cor1 == cor2 %}
+        <p>Vocês escolheram a mesma cor!!!</p>
+    {% else %}
+        <p>Ah... As cores são diferentes...</p>
+    {% endif %}
+
+    <h1>Todas as cores</h1>
+    <ul>
+        {% for cor in cores %}
+            <li>{{cor}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

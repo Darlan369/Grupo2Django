@@ -9,4 +9,5 @@ urlpatterns = [
     path('redireciona/', views.redireciona, name = 'redireciona'),
     path('special/<int:param>', views.dinamica_int, name = 'dinamica_int'),
     path('special/<str:param>', views.dinamica_str, name = 'dinamica_str'),
+    path('dtl/', views.special_dtl, name='retorna_html_dtl'),
 ]

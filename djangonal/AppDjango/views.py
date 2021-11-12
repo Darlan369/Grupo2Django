@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.http.response import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+import random
 
 def index(request):
     return render(request, 'AppDjango/appdjango.html')
@@ -37,3 +38,14 @@ def dinamica_str(request, param):
 def redireciona(request):
     url_redirecionamento = reverse('dinamica_str', args=['novo'])
     return HttpResponseRedirect(url_redirecionamento)
+
+def special_dtl(request):
+    lista_cores = ['amarelo', 'vermelho', 'azul', 'verde', 'laranja', 'roxo']
+    lista_amigos = ['você', 'Ele']
+    context = {
+        'cores': lista_cores,
+        'cor1': random.choice(lista_cores),
+        'amigo': lista_amigos,
+        'cor2': random.choice(lista_cores),
+    }
+    return render(request, 'AppDjango/appdjango-dtl.html', context)
