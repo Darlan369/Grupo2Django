@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from mapp.models import Aluno
 from datetime import date
 from random import randint
 
@@ -42,7 +43,13 @@ def especial_str(request, param):
     else:
         raise Http404()
 
-def redireciona(request):
+def redirect(request):
     # return HttpResponseRedirect('mapp/especial/vazio')
     url_redirecionamento = reverse('especial_str', args = ['vazio'])
     return HttpResponseRedirect(url_redirecionamento)
+
+def registrar(request, nome, cr):
+    aluno = Aluno(nome = nome.capitalize(), cr = cr)
+    aluno.save()
+    context = {'nome': nome.capitalize(), 'cr': cr}
+    return render(request, 'mapp/registro.html', context)

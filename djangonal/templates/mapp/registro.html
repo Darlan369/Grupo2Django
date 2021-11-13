@@ -1,0 +1,16 @@
+{% extends 'mapp/mapp-template.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Registro</title>
+{% endblock %}
+
+{% block styles %}
+    <link rel = 'stylesheet' href = '{% static "mapp/style.css" %}'>
+{% endblock %}
+
+{% block content %}
+    <h2> Registrado com sucesso </h2>
+    <p> Aluno: {{nome}} </p>
+    <p> CR : {{cr}} </p>
+{% endblock %}
