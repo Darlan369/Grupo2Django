@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+{% extends 'AppDjango/appdjango_template.html' %}
+{% load static %}
+
+{% block  header %}
     <title>App Django</title>
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel='stylesheet' href="{% static 'AppDjango/styles.css' %}">
+{% endblock %}
+
+{% block content %}
     <h1>App Django</h1>
     <p>Informação relevante aqui.</p>
-</body>
-</html>
+{% endblock %}

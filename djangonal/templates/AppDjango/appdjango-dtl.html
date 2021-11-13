@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+{% extends 'AppDjango/appdjango_template.html' %}
+{% load static %}
+
+{% block  header %}
     <title>App Django - Cores</title>
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel='stylesheet' href="{% static 'AppDjango/styles.css' %}">
+{% endblock %}
+    
+{% block content %}
     <h1>Cores</h1>
     <p>Há {{cores|wordcount}} cores.</p>
     <p>{{amigo.0|title}} escolheu a cor {{cor1|upper}}.</p>
@@ -22,5 +27,4 @@
             <li>{{cor}}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

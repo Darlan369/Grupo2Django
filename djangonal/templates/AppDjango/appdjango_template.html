@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block header %}
+    <title>App Django</title>
+    {% endblock %}
+
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <h1>App Django</h1>
+    <p>Informação relevante aqui.</p>
+    {% endblock %}
+
+    {% include 'AppDjango/footer.html' %}
+
+</body>
+
+</html>

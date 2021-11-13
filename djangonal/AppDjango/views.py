@@ -23,7 +23,7 @@ def dinamica_int(request, param):
     elif param == 1:
         return render(request, "AppDjango/triangulo.html")
     elif param == 2:
-        return render(request, "AppDjango/circulo.html")
+        return render(request, "AppDjango/quadrado.html")
     else: 
         return HttpResponseNotFound('Página não existe.')
 

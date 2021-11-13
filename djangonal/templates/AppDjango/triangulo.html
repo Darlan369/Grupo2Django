@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+{% extends 'AppDjango/appdjango_template.html' %}
+{% load static %}
+
+{% block  header %}
     <title>App Django - Triângulo</title>
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel='stylesheet' href="{% static 'AppDjango/styles.css' %}">
+{% endblock %}
+    
+{% block content %}
     <h1>Triângulo</h1>
     <p>Tem um triângulo aqui.</p>
-    <img src='https://qph.fs.quoracdn.net/main-qimg-3ffa4cf613057ebeda5a29e2c0cfe128'/>
-</body>
-</html>
+    <img src='https://static.vecteezy.com/system/resources/previews/001/200/602/original/triangle-png.png'/>
+{% endblock %}

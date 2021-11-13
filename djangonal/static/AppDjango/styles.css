@@ -1,0 +1,15 @@
+*{
+    font-family: 'Century Gothic';
+    background-color: aquamarine;
+    color: navy;
+    text-align: justify;
+}
+
+img{
+    width: 200px;
+    height: 175px;
+}
+
+h1{
+    background-color: cadetblue;
+}

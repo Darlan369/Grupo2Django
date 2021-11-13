@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+{% extends 'AppDjango/appdjango_template.html' %}
+{% load static %}
+
+{% block  header %}
     <title>App Django - Círculo</title>
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel='stylesheet' href="{% static 'AppDjango/styles.css' %}">
+{% endblock %}
+    
+{% block content %}
     <h1>Círculo</h1>
     <p>Tem um círculo aqui.</p>
     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Circle_Burgundy_Solid.svg/1200px-Circle_Burgundy_Solid.svg.png'/>
-</body>
-</html>
+{% endblock %}

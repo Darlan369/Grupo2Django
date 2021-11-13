@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+{% extends 'AppDjango/appdjango_template.html' %}
+{% load static %}
+
+{% block  header %}
     <title>App Django - Quadrado</title>
-</head>
-<body>
+{% endblock %}
+
+{% block styles %}
+    <link rel='stylesheet' href="{% static 'AppDjango/styles.css' %}">
+{% endblock %}
+    
+{% block content %}
     <h1>Quadrado</h1>
     <p>Tem um quadrado aqui.</p>
-    <img src='https://cdn-skill.splashmath.com/panel-uploads/GlossaryTerm/f42247a88ded47cab028611ad986cf77/1563506098_area-of-the-square.png'/>
-</body>
-</html>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhwhm0nfe-2jGq_SJsXJMSJdx3ux-gGhOgNA&usqp=CAU'/>
+{% endblock %}
