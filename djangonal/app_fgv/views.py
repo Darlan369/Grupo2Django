@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.http.response import HttpResponseNotFound, HttpResponseRedirect
+from django.http.response import Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from datetime import date
@@ -24,7 +24,14 @@ def preços(request, param1):
     lista_de_produtos = ["chocolate", "balinha", "maçã"]
     lista_preco =[10, 2, 7]
     
-    idx = param1 -1
+    if param1 == 1:
+        idx = param1 -1
+    elif param1 == 2:
+        idx = param1 -1
+    elif param1 == 2:
+        idx = param1 -1
+    else:
+        raise Http404()
 
     context = {
         "param1":lista_de_produtos[idx],
@@ -37,7 +44,16 @@ def quantidades(request, param2):
     lista_de_produtos = ["chocolate", "balinha", "maçã"]
     lista_quantidades = [1, 1000, 70]
 
-    idx = param2 -1
+    if param2 == 1:
+        idx = param2 -1
+    elif param2 == 2:
+        idx = param2 -1
+    elif param2 == 2:
+        idx = param2 -1
+    else:
+        raise Http404()
+
+    
 
     context = {
         "param2": lista_de_produtos[idx],
