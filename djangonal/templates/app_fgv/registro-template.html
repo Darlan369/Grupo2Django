@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% block header %}
+    <title> Registro dos Produtos </title>
+    {% endblock %}
+    
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <p> O que aconteceu??</p>
+    {% endblock %}
+
+    <br>
+    <a href = '{% url "app_fgv" %}'> Página Inicial </a>
+    <br>
+    {% include 'app_fgv/footer.html' %}
+
+</body>
+
+</html>

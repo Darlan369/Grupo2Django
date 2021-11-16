@@ -1,0 +1,17 @@
+{% extends 'app_fgv/registro-template.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Registro</title>
+{% endblock %}
+
+{% block styles %}
+    <link rel = 'stylesheet' href = '{% static "app_fgv/app_fgv.css" %}'>
+{% endblock %}
+
+{% block content %}
+    <h2> Produto Registrado </h2>
+    <p> Produto: {{nome}} </p>
+    <p> Quantidade: {{quantidade}} </p>
+    <p> Preço : {{preço}} </p>
+{% endblock %}
