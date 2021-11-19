@@ -9,7 +9,10 @@ def nada(request):
     return HttpResponse('<h2>Não tem nada aqui</h2>')
 
 def index(request):
-    return render(request, 'mapp/index.html')
+    context = {'alunos': Aluno.objects.all()}
+    #for aluno in lista_de_alunos:
+        #mensagem += str(aluno)+'<br>'
+    return render(request, 'mapp/index.html', context)
 
 def quadro(request, nome = 'marcelo'):
     context = {

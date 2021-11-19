@@ -12,6 +12,12 @@
 {% block content %}
     <h2><a onclick="JavaScript:Alert()">Mapp</a></h2>
     <p>Marcelo-app, qualquer semelhança com MAp é pura coincidência.</p>
+    <ul>
+        <p>Alunos registrados:</p>
+        {% for aluno in alunos %}
+        <li>{{ aluno|safe }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
 
 {% block js %}

@@ -38,6 +38,6 @@
         </ul>
         Recomendação: {{ url|urlize }} <br>
         Tempo até meu aniversário: {{ date|timeuntil }} <br>
-        <a href = '{% url "index" %}'> Index </a>
+        <a href = "{% url 'mapp-index' %}"> Index </a>
     </div>
 {% endblock %}
